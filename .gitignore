@@ -1,0 +1,49 @@
+
+# Git Ignores from Client
+
+# Miscellaneous
+arishti_auth_client/*.class
+arishti_auth_client/*.log
+arishti_auth_client/*.pyc
+arishti_auth_client/*.swp
+arishti_auth_client/.DS_Store
+arishti_auth_client/.atom/
+arishti_auth_client/.buildlog/
+arishti_auth_client/.history
+arishti_auth_client/.svn/
+
+# IntelliJ related
+arishti_auth_client/*.iml
+arishti_auth_client/*.ipr
+arishti_auth_client/*.iws
+arishti_auth_client/.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+arishti_auth_client/**/doc/api/
+arishti_auth_client/**/ios/Flutter/.last_build_id
+arishti_auth_client/.dart_tool/
+arishti_auth_client/.flutter-plugins
+arishti_auth_client/.flutter-plugins-dependencies
+arishti_auth_client/.packages
+arishti_auth_client/.pub-cache/
+arishti_auth_client/.pub/
+arishti_auth_client/build/
+
+# Web related
+arishti_auth_client/lib/generated_plugin_registrant.dart
+
+# Symbolication related
+arishti_auth_client/app.*.symbols
+
+# Obfuscation related
+arishti_auth_client/app.*.map.json
+
+# Android Studio will place build artifacts here
+arishti_auth_client/android/app/debug
+arishti_auth_client/android/app/profile
+arishti_auth_client/android/app/release

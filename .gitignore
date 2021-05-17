@@ -47,3 +47,8 @@ arishti_auth_client/app.*.map.json
 arishti_auth_client/android/app/debug
 arishti_auth_client/android/app/profile
 arishti_auth_client/android/app/release
+
+# Git Ignores from Server
+
+node_modules
+.env

@@ -27,18 +27,19 @@ void appStateMiddleware(
   if (action is SignIn) {
     UserSignIn currUser = await api.signin(action.email, action.password);
     //history.push("/")
-    store.dispatch(
-        SignInDone(email: currUser.email, password: currUser.password));
+    store.dispatch(SignInDone(currUser.email, currUser.password));
   } else if (action is SignUp) {
     UserSignUp currUser = await api.signup(action.firstName, action.lastName,
         action.email, action.password, action.confirmPassword);
     //history.push("/")
-    store.dispatch(SignUpDone(
-        firstName: currUser.firstName,
-        lastName: currUser.lastName,
-        email: currUser.email,
-        password: currUser.password,
-        confirmPassword: currUser.confirmPassword));
+    store.dispatch(SignUpDone(currUser.firstName, currUser.lastName,
+        currUser.email, currUser.password, currUser.confirmPassword));
+  } else if (action is IsLoggedInCheck) {
+    bool status = (action.isLoggedIn == true) ? false : true;
+    store.dispatch(IsLoggedInChecked(status));
+  } else if (action is IsSignInPageCheck) {
+    bool status = (action.isSignInPage == true) ? false : true;
+    store.dispatch(IsSignInPageChecked(status));
   }
   next(action);
 }

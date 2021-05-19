@@ -15,6 +15,11 @@ AppState reducers(AppState prevState, dynamic action) {
         email: action.email,
         password: action.password,
         confirmPassword: action.confirmPassword);
+  } else if (action is IsLoggedInChecked) {
+    return AppState.copyWith(prev: prevState, isLoggedIn: action.isLoggedIn);
+  } else if (action is IsSignInPageChecked) {
+    return AppState.copyWith(
+        prev: prevState, isSignInPage: action.isSignInPage);
   } else {
     return AppState(
         firstName: prevState.firstName,

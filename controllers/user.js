@@ -26,7 +26,10 @@ export const signin = async (req, res) => {
       { expiresIn: "1h" }
     );
 
-    res.status(200).json({ result: existingUser, token });
+    //res.status(200).json({ result: existingUser, token });
+    res
+      .status(200)
+      .json({ email: existingUser.email, password: existingUser.password });
   } catch (error) {
     res.status(500).json({ message: "Something went wrong." });
   }
@@ -60,7 +63,14 @@ export const signup = async (req, res) => {
       }
     );
 
-    res.status(200).json({ result, token });
+    //res.status(200).json({ result, token });
+    res.status(200).json({
+      firstName: result.firstName,
+      lastName: result.lastName,
+      email: result.email,
+      password: result.password,
+      confirmPassword: result.confirmPassword,
+    });
   } catch (error) {
     res.status(500).json({ message: "Something went wrong" });
 

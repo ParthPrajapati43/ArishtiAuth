@@ -40,4 +40,8 @@ class AppState {
     this.isLoggedIn = false;
     this.isSignInPage = true;
   }
+
+  bool getIsLoggedIn() {
+    return this.isLoggedIn;
+  }
 }

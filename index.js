@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import userRoutes from "./routes/users.js";
+import bodyParser from "body-parser";
 
 // creating the express object
 const app = express();
@@ -10,6 +11,9 @@ dotenv.config();
 
 // enabling all CORS requests
 app.use(cors());
+
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // used for when the routes and functions seperated
 app.use("/user", userRoutes);
